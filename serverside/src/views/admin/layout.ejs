@@ -1,0 +1,16 @@
+<%- include('header') -%>
+
+<%- include('navbar') -%>
+    
+<%- include('sidebar') -%>
+
+<% if (typeof currentPage !== 'undefined') { %>
+    <% if (typeof data === 'undefined') { %>    
+        <%- include(currentPage.name) -%>
+    <% } else {%>
+        <%- include(currentPage.name, {data}) -%>
+    <% } %>
+<% } %>
+
+
+<%- include('footer') -%>

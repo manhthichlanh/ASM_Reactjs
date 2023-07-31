@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
+
+.orderList td a {
+    color: red;
+    padding: 3px;
+    text-decoration: none;
+}
+.orderList td a:hover {
+
+   text-decoration: underline;
+}
+
+.orderList table{
+
+ width: 97%; 
+ border-collapse: collapse;
+ border-spacing: 0;
+ box-shadow: 0 2px 15px rgba(64,64,64,.7);
+ border-radius: 12px 12px 0 0;
+ overflow: hidden;
+
+}
+.orderList td , th{
+ padding: 15px 20px;
+ text-align: center;
+ 
+
+}
+.orderList th{
+ background-color: #000;
+ color: #fafafa;
+ font-family: 'Open Sans',Sans-serif;
+ font-weight: 200;
+ text-transform: uppercase;
+
+}
+.orderList tr{
+ width: 100%;
+ background-color: #fafafa;
+ font-family: 'Montserrat', sans-serif;
+}
+.orderList tr:nth-child(even){
+ background-color: #eeeeee;
+}

@@ -1,0 +1,135 @@
+@media (min-width: 1200px)
+{
+    .order  .container{
+    max-width: 1140px;
+  }
+}
+.order .d-flex{
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 25px;
+}
+.order form{
+  flex: 4;
+}
+.order .Yorder{
+  flex: 2;
+}
+.order #noted {
+    width: 70%;
+    height: 100px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dadada;
+    color: #888;
+}
+.order select {
+    width: 73%;
+    height: 43px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dadada;
+    color: #888;
+}
+
+.order-title{
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #5195A8), color-stop(100, #70EAFF));
+  background: -moz-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);
+  background: -ms-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);
+  background: -o-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);
+  background: linear-gradient(to bottom right, #5195A8 0%, #70EAFF 100%);
+  border-radius:5px 5px 0 0 ;
+  padding: 20px;
+  color: #f6f6f6;
+}
+.order h2{
+  margin: 0;
+  padding-left: 15px; 
+}
+.required{
+  color: red;
+}
+.order label, table{
+  display: block;
+  margin: 15px;
+}
+.order th {
+    background-color: #fff;
+}
+.order label>span{
+  float: left;
+  width: 25%;
+  margin-top: 12px;
+  padding-right: 10px;
+}
+.order input[type="text"], input[type="tel"], input[type="email"] 
+{
+  width: 70%;
+  height: 30px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #dadada;
+  color: #888;
+}
+
+.Yorder{
+  margin-top: 15px;
+  /* height: 600px; */
+  padding: 20px;
+  border: 1px solid #dadada;
+}
+.order table{
+  margin: 0;
+  padding: 0;
+}
+.order th{
+  border-bottom: 1px solid #dadada;
+  padding: 10px 0;
+}
+.order tr>td:nth-child(1){
+    width: 30%;
+    text-align: left;
+    color: #2d2d2a;
+  }
+.order tr>td:nth-child(2){
+  width: 60%;
+  text-align: left;
+  color: #2d2d2a;
+}
+.order tr>td:nth-child(3){
+  width: 10%;
+  text-align: right;
+  color: #52ad9c;
+}
+.order td{
+  border-bottom: 1px solid #dadada;
+  padding: 25px 25px 25px 0;
+}
+
+.order p{
+  display: block;
+  color: #888;
+  margin: 0;
+  padding-left: 25px;
+}
+.order .Yorder>div{
+  padding: 15px 0; 
+}
+
+.order button{
+  width: 98%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #52ad9c;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+.order button:hover{
+  cursor: pointer;
+  background: #428a7d;
+}

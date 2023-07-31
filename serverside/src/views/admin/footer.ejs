@@ -1,0 +1,45 @@
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/chart.min.js"></script>
+<script src="/js/chart-data.js"></script>
+<script src="/js/easypiechart.js"></script>
+<script src="/js/easypiechart-data.js"></script>
+<script src="/js/bootstrap-datepicker.js"></script>
+<script src="/js/custom.js"></script>
+<script>
+    window.onload = function () {
+    var chart1 = document.getElementById("line-chart")?.getContext("2d");
+    if (typeof chart1 !== 'undefined') {
+        window.myLine = new Chart(chart1).Line(lineChartData, {
+        responsive: true,
+        scaleLineColor: "rgba(0,0,0,.2)",
+        scaleGridLineColor: "rgba(0,0,0,.05)",
+        scaleFontColor: "#c5c7cc"
+    });
+    }
+
+};
+</script>
+<script>
+    $(document).ready(function() {
+      // Bắt sự kiện click trên thẻ <a> có id="logout-link"
+      $('.logout').click(function(event) {
+        event.preventDefault(); // Ngăn chặn sự kiện mặc định (chuyển hướng)
+    
+        // Gọi hàm mà bạn muốn thực hiện trước khi chuyển hướng
+        doSomethingBeforeLogout();
+    
+        // Tiến hành chuyển hướng sau khi thực hiện xong các xử lý
+        window.location.href = $(this).attr('href');
+      });
+    
+      // Hàm thực hiện các xử lý trước khi đăng xuất
+      function doSomethingBeforeLogout() {
+        // Thực hiện các xử lý mà bạn muốn trước khi đăng xuất
+        localStorage.removeItem("accessToken")
+        alert('Đang thực hiện các xử lý trước khi đăng xuất...');
+      }
+    });
+    </script>
+</body>
+</html>  

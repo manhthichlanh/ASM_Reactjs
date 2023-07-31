@@ -1,0 +1,313 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+.detail .contain {
+    display: flex;
+    flex-wrap: wrap;
+    font: 12px/18px "Lato", Arial, sans-serif;
+    background: white;
+    width: 100%;
+    margin: 50px auto;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: -1px 15px 30px -6px #c4c4c4;
+}
+.detail strong {
+    font-weight: 900;
+}
+.detail .shoe-details-left {
+   
+    width: 450px;
+    color: white;
+    /* padding: 30px; */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.detail .shoe-details-left .logo {
+    width: 75px;
+    margin-bottom: 55px;
+}
+.detail .shoe-details-left .product-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.detail .shoe-details-left .product-description {
+    width: 200px;
+    font-size: 12px;
+}
+.detail .shoe-details-left .product-shot {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.detail .shoe-details-right .product-price {
+    letter-spacing: 0.6px;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+.detail .shoe-details-right {
+    width: 470px;
+    padding: 30px;
+    text-transform: uppercase;
+}
+.detail .shoe-details-right h2 {
+    font-size: larger;
+}
+.detail .shoe-details-right .product-quantity h2 {
+    margin-bottom: 0;
+    margin-right: 20px;
+}
+/* Quantity input */
+.detail .shoe-details-right .product-quantity
+input[type="number"] {
+  width: 50px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Thiết lập kiểu con trỏ khi hover vào input */
+.detail .shoe-details-right .product-quantity
+input[type="number"]:hover {
+  cursor: pointer;
+}
+
+/* Thiết lập màu nền cho phần tăng/giảm giá trị */
+.detail .shoe-details-right .product-quantity
+input[type="number"]::-webkit-inner-spin-button,
+.detail .shoe-details-right .product-quantity
+input[type="number"]::-webkit-outer-spin-button {
+  background-color: #ccc;
+  height: 100%;
+}
+
+/* Thiết lập màu nền khi focus vào input */
+.detail .shoe-details-right .product-quantity
+input[type="number"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px #78CCCD;
+  border-color: #78CCCD;
+}
+
+/* Thiết lập kiểu con trỏ khi focus vào input */
+.detail .shoe-details-right .product-quantity
+input[type="number"]::-webkit-outer-spin-button,
+.detail .shoe-details-right .product-quantity
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Thiết lập kiểu icon phóng to/phóng nhỏ */
+.detail .shoe-details-right .product-quantity
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-transform: scale(1.2);
+}
+
+/* Thiết lập kiểu icon thu nhỏ/phóng to */
+.detail .shoe-details-right .product-quantity
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-transform: scale(1.2);
+}
+
+/* Thiết lập vị trí của icon tăng/giảm giá trị */
+.detail .shoe-details-right .product-quantity
+input[type="number"]::-webkit-inner-spin-button {
+  position: relative;
+  right: -10px;
+  z-index: 1;
+}
+
+/* Thiết lập icon tăng/giảm giá trị */
+.detail .shoe-details-right .product-quantity
+input[type="number"]::-webkit-inner-spin-button:before {
+  content: "+";
+  color: #fff;
+  font-size: 12px;
+}
+.detail .shoe-details-right .product-quantity
+input[type="number"]::-webkit-outer-spin-button:before {
+  content: "-";
+  color: #fff;
+  font-size: 12px;
+}
+
+/* Thiết lập màu nền của phần tăng/giảm giá trị */
+.detail .shoe-details-right .product-quantity
+input[type="number"]::-webkit-inner-spin-button:before,
+.detail .shoe-details-right .product-quantity
+input[type="number"]::-webkit-outer-spin-button:before {
+  background-color: #78CCCD;
+  padding: 0 4px;
+  line-height: 1.4;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.detail .shoe-details-right .product-quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.detail .shoe-details-right .product-title {
+    font-size: 27px;
+    font-weight: 700;
+}
+.detail .shoe-details-right .product-price {
+    display: block;
+}
+.detail .shoe-details-right .label {
+    background: #00b156;
+    color: white;
+    border-radius: 5px;
+    padding: 4px 7px;
+    font-size: 10px;
+    vertical-align: top;
+    margin-left: 10px;
+}
+.detail .shoe-details-right .product-category {
+    margin: 5px 0 10px;
+}
+.detail .shoe-details-right .product-stars {
+    margin-bottom: 30px;
+}
+.detail .shoe-details-right .product-stars .gray {
+    color: #999;
+}
+.detail .shoe-details-right .product-tabs {
+    margin-bottom: 20px;
+}
+.detail .shoe-details-right .product-tabs li {
+    display: inline;
+    margin-right: 10px;
+    padding: 0 7px;
+    color: #00b156;
+}
+.detail .shoe-details-right .product-tabs li.active {
+    padding-bottom: 3px;
+    border-bottom: 3px solid #00b156;
+}
+.detail .shoe-details-right .product-tabs li a {
+    color: #CACACA;
+    text-decoration: none;
+    font-weight: 700;
+}
+.detail .shoe-details-right .product-tabs li a:hover, .detail .shoe-details-right .product-tabs li a:focus {
+    color: #00b156;
+}
+.detail .shoe-details-right .product-tabs li.active > a {
+    color: #00b156 !important;
+}
+.detail .shoe-details-right .tab-content {
+    text-transform: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.detail .shoe-details-right h2 {
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+.detail .shoe-details-right .sizes {
+    display: flex;
+    margin-bottom: 20px;
+    
+}
+.detail .shoe-details-right .sizes li {
+    text-align: center;
+    list-style: none;
+    font-size: 14px;
+    margin-right: 40px;
+    padding: 5px;
+}
+.detail .shoe-details-right .sizes li.active, .detail .shoe-details-right .sizes li:hover {
+    background: #00b156;
+    border-radius: 3px ;
+    color: white;
+}
+.detail .shoe-details-right .sizes li.active > a, .detail .shoe-details-right .sizes li:hover > a {
+    color: white;
+
+}
+.detail .shoe-details-right .sizes li a {
+    text-decoration: none;
+    color: black;
+}
+.detail .shoe-details-right .colours {
+    margin: 20px 0 60px;
+}
+.detail .shoe-details-right .colours li {
+    display: inline;
+    margin-right: 30px;
+}
+.detail .shoe-details-right .colours li.active > a {
+    border: 1px solid #00D3EF;
+    border-radius: 100%;
+    padding: 14px 7px 3px 7px;
+}
+.detail .shoe-details-right .circle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+.detail .shoe-details-right .blue {
+    background: #00D3EF;
+}
+.detail .shoe-details-right .orange {
+    background: #00b156;
+}
+.detail .shoe-details-right .yellow {
+    background: #FFD203;
+}
+.detail .shoe-details-right .black {
+    background: black;
+}
+.detail .shoe-details-right .btn {
+    border: 0;
+    text-decoration: none;
+    background: #000;
+    color: white;
+    padding: 14px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+.detail .shoe-details-right .btn:hover {
+    opacity: 0.6;
+    /* background: #d9d9d9; */
+}
+.detail .shoe-details-right .btn-secondary {
+    background: #00b156;
+
+    margin-right: 20px;
+}
+.detail .shoe-details-right .btn-secondary:hover {
+    opacity: 0.8;
+}
+
+.detail .close-button {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    font-size: 40px;
+    color: #B8B8B8;
+    background: white;
+    border-radius: 50%;
+    padding: 10px 10px 15px 10px;
+    box-shadow: -1px 3px 20px -6px #c4c4c4;
+}
+.detail .close-button:hover {
+    background: #fbfafa;
+    cursor: pointer;
+}
+

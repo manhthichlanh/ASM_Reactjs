@@ -1,0 +1,62 @@
+.listOfProducts {
+    display: flex;
+    flex-direction: column;
+}
+.listOfProducts select {
+    margin: 20px 0;
+    align-self: flex-end;
+    margin-right: 30px;
+    background-color: transparent;
+   
+    font-size: large;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 8px;
+    /* Bôi đen đậm lựa chọn hiện tại */
+    background-color: #fefefe;
+
+    /* Màu chữ và font chữ */
+    color: #333;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+  
+    /* Bo tròn viền */
+    border-radius: 4px;
+    /* Độ rộng viền và màu sắc */
+    border: 1px solid #ccc;
+  
+    /* Đổ bóng box chọn */
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+  
+    /* Thời gian hoàn thành hiệu ứng */
+    transition: all 0.2s ease-in-out;
+  
+    /* Canh trái cho nội dung trong box */
+    text-align: left;
+    /* Chỉnh độ rộng cho box chọn */
+    width: 200px;
+  
+    /* Xóa kiểu mặc định của select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  /* Hiệu ứng khi rê chuột qua box chọn */
+  .listOfProducts  select:hover {
+    border-color: #66afe9;
+  }
+  
+  /* Hiệu ứng khi box chọn được chọn */
+  .listOfProducts  select:focus {
+    border-color: #66afe9;
+    box-shadow: 0 0 0 3px rgba(102, 175, 233, 0.5);
+    outline: none;
+  }
+  
+  /* Hiệu ứng khi box chọn được chọn và thả chuột ra */
+  .listOfProducts  select:active {
+    border-color: #66afe9;
+    box-shadow: 0 0 0 3px rgba(102, 175, 233, 0.5);
+    outline: none;
+  }

@@ -1,0 +1,109 @@
+<%- include('header') -%>
+<div class="container-fluid">
+    <div class="row">
+        <div
+            class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">Đăng Nhập</div>
+                <div class="panel-body">
+                    <form role="form" action="javascript:void(0)" method="post">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control"
+                                    placeholder="Tài Khoản" name="username"
+                                    type="text" autofocus>
+                            </div>
+                            <div class="message color-red user"
+                                style="margin-bottom: 10px;"></div>
+
+                            <div class="form-group">
+                                <input class="form-control"
+                                    placeholder="Mật khẩu" name="password"
+                                    type="password" value>
+                            </div>
+                            <div class="message color-red pass"></div>
+
+                            <div class="checkbox">
+                                <label>
+                                    <input name="remember" type="checkbox"
+                                        value="Nhớ mật khẩu">Nhớ mật khẩu
+                                </label>
+                            </div>
+                            <input type="submit" value="Đăng Nhập"
+                                class="btn btn-primary btn-md" name="dangnhap">
+                        </fieldset>
+                        <div class="message color-red allMessage"
+                            style="margin-top: 10px;"></div>
+
+                    </form>
+                </div>
+            </div>
+        </div><!-- /.col-->
+    </div><!-- /.row -->
+</div>
+<script>
+        
+        const form = document.querySelector('form');
+        const usernameInput = document.querySelector('input[name="username"]');
+        const passwordInput = document.querySelector('input[name="password"]');
+        const allMessage = document.querySelector('.allMessage');
+        form.addEventListener('submit', (event) => {
+            // Kiểm tra xem người dùng đã nhập đầy đủ thông tin hay chưa
+            let isValid = true;
+
+            if (usernameInput.value.trim() === '') {
+                isValid = false;
+                document.querySelector('.message.user').innerHTML = 'Vui lòng nhập tài khoản';
+            } else {
+                document.querySelector('.message.user').innerHTML = '';
+            }
+
+            if (passwordInput.value.trim() === '') {
+                isValid = false;
+                document.querySelector('.message.pass').innerHTML = 'Vui lòng nhập mật khẩu';
+            } else {
+                document.querySelector('.message.pass').innerHTML = '';
+            }
+            
+            if (!isValid) {
+                // Ngăn chặn gửi form nếu thông tin không hợp lệ
+                event.preventDefault();
+            } else {
+                authUser(usernameInput.value,passwordInput.value);
+            }
+        });
+        const authUser = async (username,password) => {
+            try {    
+                // send the username and password to the API using the Fetch API
+                const response = await fetch(`http://localhost:8085/admin/login`, {
+                    method: 'POST',
+                    body: JSON.stringify({ username, password }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                // get the response data
+                
+                const data = await response.json();
+                
+                const status = response.status;
+                const message = data.message;
+                const accessToken = data.accessToken;
+                console.log(status)
+                if (status === 201) {
+                    allMessage.innerHTML = message;
+                    localStorage.setItem("accessToken", accessToken);
+                    const timer = setTimeout(() => {
+                        window.location.href = window.location.pathname.replace(/\/[^\/]+$/, '') + '/home';
+                    }, 1000);
+                } else {
+                    allMessage.innerHTML = message;
+                }                
+                console.log(status)
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        
+    </script>

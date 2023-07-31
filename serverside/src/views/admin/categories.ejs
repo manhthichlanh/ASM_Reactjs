@@ -1,0 +1,219 @@
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#">
+                    <em class="fa fa-home"></em>
+                </a></li>
+            <li class="active">Danh Mục</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Danh Mục</h1>
+        </div>
+    </div><!--/.row-->
+
+    <!-- Nav -->
+
+    <!-- body	 -->
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            <form class="form-inline" >
+                <div class="form-group ">
+                    <input class="form-control inp" type="text" name="search"
+                        id placeholder="Tên Danh Mục">
+                    <input class="btn btn-primary btn-md" type="submit"
+                        value="Tìm kiếm" name="accept">
+                </div>
+
+                <a href="/admin/categories/addNew" class="btn btn-success "
+                    style="float: right;">Nhập thêm</a>
+
+            </form>
+
+            <br>
+            <table border="1" class="table tbl">
+                <thead>
+                    <tr>
+                        <th class="text-capitalize">STT</th>
+                        <th class="text-capitalize">ID</th>
+                        <th class="text-capitalize">Tên Danh Mục</th>
+                        <th class="text-capitalize">Ưu tiên</th>
+                        <th class="text-capitalize">Hiển Thị</th>
+                        <th class="text-capitalize">Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% if (data && data.itemList.length > 0) { %>
+                    <% data.itemList.forEach(function(cate, index) { %>
+
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= cate._id %></td>
+                        <td><%= cate.categoryName %></td>
+                        <td><%= cate.priority %></td>
+                        <td><%= cate.display %></td>
+                        <td><a href="/admin/categories/edit/<%= cate._id %>">Sửa</a>
+                            | <a href="/admin/categories/delete/<%= cate._id %>">Xóa</a></td>
+                    </tr>
+
+                    <% }); %>
+                    <% } %>
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+
+  <div class="row mb-5">
+    <div class="col-md-12">
+        <div class="block-27">
+            <!-- PHÂN TRANG -->
+            <ul>
+                <% if (data.currentPage == 1) { %>
+                    <li><span href="?page=<%=data.currentPage-1%>">&lt;</span></li>
+                <% } else {%>
+                    <li><a href="?page=<%=data.currentPage-1%>">&lt;</a></li>
+                <% } %>
+
+                 <!-- FIRST ITEM -->  
+                <% if(data.currentPage == 1) { %> 
+                    <li class="active disabled">
+                        <span href="?page=1">1</span>
+                    </li>
+                <% } else { %>
+                    <li class="disabled">
+                        <a href="?page=1">1</a>
+                    </li>
+                <% } %>
+                
+                <% if (data.totalPages>1 && data.totalPages<6) { %>
+    
+                    <% for( let index = 2; index < data.totalPages; index++ ) { %>
+
+                        <% if (data.currentPage == index) { %>
+                            <li class="active"><span href="?page=<%= index %>" ><%= index %></span></li>
+                        <% } else {%>
+                            <li><a href="?page=<%= index %>" ><%= index %></a></li>
+                        <% } %>   
+
+                    <% } %>
+
+                <% } else if (data.totalPages>=6) { %>
+                        <% if (data.currentPage == 1) { %>
+                            <% for( let index = 2; index < 5; index++ ) { %>
+                                <% if (data.currentPage == index) { %>
+                                    <li class="active"><span href="?page=<%= index %>" ><%= index %></span></li>
+                                <% } else {%>
+                                    <li><a href="?page=<%= index %>" ><%= index %></a></li>
+                                <% } %>  
+                            <% } %>
+
+                            <li ><span >...</span></li>
+
+                        <% } else if (data.currentPage == data.totalPages) { %>
+
+                            <li ><span >...</span></li>
+
+                            <% for( let index = (data.totalPages -3); index < (data.totalPages ); index++     ) { %>
+                                <% if (data.currentPage == index) { %>
+                                    <li class="active"><span href="?page=<%= index %>" ><%= index %></span></li>
+                                <% } else {%>
+                                    <li><a href="?page=<%= index %>" ><%= index %></a></li>
+                                <% } %>  
+                            <% } %>
+     
+                        <% } else if (data.currentPage == 2) { %>
+
+                            <% for( let index = 2; index < 5; index++ ) { %>
+                                <% if (data.currentPage == index) { %>
+                                    <li class="active"><span href="?page=<%= index %>" ><%= index %></span></li>
+                                <% } else {%>
+                                    <li><a href="?page=<%= index %>" ><%= index %></a></li>
+                                <% } %>  
+                            <% } %>
+                            
+                            <li ><span >...</span></li>
+
+                        <% } else if (data.currentPage == (data.totalPages -1) ) {%>
+
+                            <li ><span >...</span></li>
+
+                            <% for( let index = (data.totalPages -3); index < (data.totalPages ); index++     ) { %>
+                                <% if (data.currentPage == index) { %>
+                                    <li class="active"><span href="?page=<%= index %>" ><%= index %></span></li>
+                                <% } else {%>
+                                    <li><a href="?page=<%= index %>" ><%= index %></a></li>
+                                <% } %>  
+                            <% } %>
+                            
+                          
+                        <% } else {%>
+
+                            <% if (data.currentPage - 2 > 1) { %>
+                                <li ><span >...</span></li>
+                            <% } %>
+
+                            <% for( let index = (data.currentPage -1); index < (data.currentPage +2); index++     ) { %>
+                                <% if (data.currentPage == index) { %>
+                                    <li class="active"><span href="?page=<%= index %>" ><%= index %></span></li>
+                                <% } else {%>
+                                    <li><a href="?page=<%= index %>" ><%= index %></a></li>
+                                <% } %>  
+                            <% } %> 
+
+                            <% if (data.currentPage + 3 == data.totalPages) { %>
+                                <li ><span >...</span></li>
+                            <% } %>
+                        <% } %>
+
+                    <% } %>
+                        
+               
+
+          
+                
+
+                <!-- <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li> -->
+                
+                <% if (data.totalPages  > 1) { %>
+                     <!-- LAST ITEM -->  
+                    <% if(data.currentPage == data.totalPages ) { %> 
+                        <li class="active disabled">
+                            <span href="?page=<%=data.totalPages%>"><%=data.totalPages%></span>
+                        </li>
+                    <% } else { %>
+                        <li class="disabled">
+                            <a href="?page=<%=data.totalPages%>"><%=data.totalPages%></a>
+                        </li>
+                    <% } %>                  
+
+                <% } %>
+
+                <% if(data.currentPage == data.totalPages ) { %> 
+                    <li><span href="#">&gt;</span></li>
+                <% } else { %>
+                    <li><a href="?page=<%= data.currentPage+1 %>">&gt;</a></li>
+                <% } %>
+                <h1>
+               
+                </h1>
+            </ul>
+            <!-- PHÂN TRANG -->
+        </div>
+    </div>
+</div>
+
+
+</div>
+</div><!-- /.row -->
